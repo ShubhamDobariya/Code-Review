@@ -12,10 +12,15 @@ html,
   width: 100%;
 }
 
+.heading {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
 main {
   height: 100%;
   width: 100%;
-  padding: 1.5rem;
+  padding: 2rem;
   display: flex;
   gap: 1rem;
 }
@@ -26,14 +31,47 @@ main .right {
   height: 100%;
   flex-basis: 50%;
   border-radius: 0.7rem;
+  overflow: auto;
 }
+
+
+main .left {
+  background-color: rgb(61, 58, 58);
+  padding: 0.2rem 0.2rem;
+  font-size: 1rem;
+  overflow: auto;
+}
+
+/* main .left .editor {
+  flex: 1;
+  overflow: auto;
+ 
+} */
+
+.editor-textarea {
+  border: none !important;
+  outline: none !important;
+  background: transparent;
+  resize: none;
+}
+
+/* .left .editor {
+  font-family: Fira code, Fira Mono, monospace;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+} */
 
 main .left {
   background-color: #000000;
   position: relative;
+  overflow: auto;
+  padding-top: 0.5rem;
 }
 
-.left .code,
+/* .left .code,
 .code pre,
 .code pre code {
   height: 100%;
@@ -41,12 +79,13 @@ main .left {
   margin: 0;
   border-radius: 0.7rem;
   background-color: #0c0c0c;
-}
+} */
 
 main .left .review {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+  position: sticky;
+  top: 0;
+  margin-top: -2.5rem;
+  float: right;
   background-color: #f2eeee;
   color: #000000;
   padding: 0.5rem 2rem;
@@ -54,7 +93,9 @@ main .left .review {
   cursor: pointer;
   user-select: none;
   border-radius: 0.7rem;
+  z-index: 10;
 }
+
 
 main .right {
   background-color: rgb(61, 58, 58);
@@ -84,4 +125,52 @@ main .right {
   100% {
     transform: rotate(360deg);
   }
+}
+
+
+
+
+main .left::-webkit-scrollbar {
+  width: 8px;
+}
+
+main .left::-webkit-scrollbar-track {
+  background: #000;
+}
+
+main .left::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+main .left::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+main .left {
+  scrollbar-width: thin;
+  scrollbar-color: #333 #000;
+}
+
+main .right::-webkit-scrollbar {
+  width: 8px;
+}
+
+main .right::-webkit-scrollbar-track {
+  background: rgb(61, 58, 58);
+
+}
+
+main .right::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+main .right::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+main .right {
+  scrollbar-color: #888 rgb(61, 58, 58);
+  scrollbar-width: thin;
 }
